@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <title>infoneige</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <!--<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.3.min.css">-->
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile.theme.gelato-1.4.3.css">
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile.icons-1.4.3.min.css" />
+    <link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.4.3.min.css" />
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile-1.4.3.min.js"></script>
+    <script src="js/app.js"></script>
+    <script charset="UTF-8" type="text/javascript" src="https://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0&mkt=fr-fr"></script>
+    <script>
+        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+            document.write('<script src="js/cordova-shim.js" type="text/javascript"><' + '/script>');
+        }
+    </script>
+</head>
+<body>
+
+    <div id="map-page" data-role="page" data-theme="a" class="ui-no-padding">
+
+        <div data-role="header" data-position="fixed">
+            <a href="#" id="btn-back" style="display:none;" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-corner-all" data-role="button" role="button">back</a>
+            <h1>GARER ICI</h1>
+            <a href="#" id="btn-about" class="ui-btn-right ui-btn ui-icon-gear ui-btn-icon-notext ui-corner-all" data-role="button" role="button">about</a>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content ui-no-padding">
+            <div id='mapDiv' class="map"></div>
+            <a href="#" id="btn-gps"
+               class="ui-btn-left ui-btn ui-icon-location ui-btn-icon-notext ui-corner-all" data-role="button" role="button">location</a>
+            <div data-role="popup" id="popupPark" class="ui-content" data-arrow="l,t" data-transition="slideup">
+                <h2 class="street-address"></h2>
+                <p class="street-detail"></p>
+                <p class="street-last"></p>
+
+                <a href="#" id="btn-park-cancel" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-top ui-icon-forbidden">annuler</a>
+                <a href="#" id="btn-park-continue" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-top ui-icon-carat-r">continuer</a>
+            </div>
+            <div data-role="popup" id="popupFind" class="ui-content" data-arrow="l,t" data-transition="slideup">
+                <p>Votre voiture garée ici.</p>
+                <a href="#" id="btn-park-remove" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-top ui-icon-delete">retrier</a>
+                <a href="#" id="btn-park-direction" class="ui-btn ui-btn-inline ui-mini ui-btn-icon-top ui-icon-navigation">direction</a>
+            </div>
+            <div id="directionsItinerary"></div>
+        </div><!-- /content -->
+
+        <div data-role="footer" data-position="fixed">
+            <div id="navbar-1" data-role="navbar">
+                <ul>
+                    <li><a id="btn-park-set" href="#" data-icon="star">garez ici</a></li>
+                    <li><a class="btn-neige" href="#" data-icon="info">neige</a></li>
+                </ul>
+            </div><!-- /navbar -->
+            <div id="navbar-2" data-role="navbar" style="display:none;">
+                <ul>
+                    <li><a id="btn-park-find" href="#" data-icon="eye">trouver</a></li>
+                    <li><a class="btn-neige" href="#" data-icon="info">neige</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /header -->
+    </div><!-- /page -->
+
+
+
+</body>
+</html>
